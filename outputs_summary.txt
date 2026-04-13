@@ -1,0 +1,99 @@
+Urban Energy Coordination
+========================
+
+Notebook overview
+-----------------
+Key ideas:
+- peak reduction
+- excess reduction
+- temporal sparsity control
+- thresholded violation metric
+- budgeted activation constraint
+
+Prediction stage
+----------------
+R2: 0.898565
+MAE: 788.524185
+RMSE: 1232.956598
+ExplainedVariance: 0.898713
+
+Main optimization stage
+-----------------------
+regime: temporal_sparse_budget
+solver_used: SCS
+solution_status: optimal
+runtime_sec: 545.699376
+peak_before: 163867.155634
+peak_after: 135204.709943
+peak_reduction_ratio: 0.174913
+excess_sum_before: 5604145.271499
+excess_sum_after: 2116536.802345
+excess_reduction_ratio: 0.622327
+variance_before: 271442763.223761
+variance_after: 41711633.102336
+variance_reduction_ratio: 0.846334
+overload_days_before: 375
+overload_days_after: 517
+violation_days_after_thresholded: 65
+stress_ceiling_days_after: 39
+duration_threshold_days_after: 84
+total_shifted_out_energy: 5170366.293229
+total_shifted_in_energy: 3268136.820023
+total_storage_charge: 1068519.212644
+total_storage_discharge: 964382.103132
+total_curtailment: 44658.825463
+curtailment_share_of_total_load: 0.000679
+intervention_std: 2968.513889
+total_stress_slack: 317611.093720
+total_rolling_slack: 3853211.800050
+total_overload_budget_slack: 0.000000
+conservation_slack: 1902473.681618
+terminal_soc_slack: 0.000000
+objective_overload_l2_component: 6743494062.645796
+objective_overload_l1_component: 507271.959786
+objective_violation_activation_component: 2.437508
+violation_activation_budget_used: 2.437508
+violation_activation_budget_max: 236
+violation_threshold: 110902.034510
+stress_limit: 114795.085226
+reference_load: 106060.676568
+grid_capacity_proxy: 124777.266550
+
+Interpretation notes
+--------------------
+Raw overload days after: 517
+Thresholded violation days after: 65
+The thresholded metric is the primary indicator of significant overload persistence.
+Raw overload-day counts can remain high because convex formulations may leave many negligible residual violations.
+
+Pass/fail checks
+----------------
+[PASS] Peak reduction > 10%
+[PASS] Curtailment share < 0.5%
+[PASS] Significant violation days reduced
+[FAIL] Stress ceiling days after <= 10
+
+Ablation study
+--------------
+
+Ablation study
+--------------
+Ablation skipped in default notebook mode.
+
+Saved tables
+------------
+/content/drive/MyDrive/Outputs/tables/ridge_metrics_temporal_optimization.csv
+/content/drive/MyDrive/Outputs/tables/optimization_metrics_temporal_sparse_budget.csv
+/content/drive/MyDrive/Outputs/tables/optimization_results_temporal_sparse_budget.csv
+/content/drive/MyDrive/Outputs/tables/paper_metrics_table.csv
+/content/drive/MyDrive/Outputs/tables/top_stress_days_before.csv
+/content/drive/MyDrive/Outputs/tables/top_stress_days_after.csv
+/content/drive/MyDrive/Outputs/tables/before_after_metric_comparison.csv
+
+Saved figures
+-------------
+/content/drive/MyDrive/Outputs/figures/district_load_sparse_budget.png
+/content/drive/MyDrive/Outputs/figures/storage_soc_sparse_budget.png
+/content/drive/MyDrive/Outputs/figures/intervention_components_sparse_budget.png
+/content/drive/MyDrive/Outputs/figures/excess_profile_sparse_budget.png
+/content/drive/MyDrive/Outputs/figures/metric_comparison_sparse_budget.png
