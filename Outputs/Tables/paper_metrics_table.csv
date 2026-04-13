@@ -1,0 +1,9 @@
+metric,value
+Peak reduction ratio,0.1749126942510743
+Excess reduction ratio,0.6223265636760941
+Variance reduction ratio,0.8463335967886865
+Curtailment share,0.0006793975838695069
+Raw overload days after,517.0
+Thresholded violation days after,65.0
+Stress ceiling days after,39.0
+Activation budget used,2.4375083569708
